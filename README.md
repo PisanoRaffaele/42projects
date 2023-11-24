@@ -4,7 +4,7 @@ Cursus Porjects:
 
 | Project Name | Grade |	
 | --- | --- |
-| [Libft](./libft/) | 125% ✅ |
+| [Libft](./libft/) | 125% (also bonus part) ✅ |
 | [ft_printf](./ft_printf/) | 100% ✅	 |
 | [get_next_line](./getnextline/) | Currently doing ⌛ |
 
