@@ -1,8 +1,8 @@
 # 42projects
 
 Project Name	Grade	
-Shell 00	100% ✅
-C 00	100% ✅	
+Shell 00  100% ✅
+C 00  100% ✅	
 C 01	100% ✅	
 C 02	85% ✅	
 C 03	100% ✅	
