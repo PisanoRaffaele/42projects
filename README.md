@@ -6,6 +6,7 @@ Cursus Porjects:
 | --- | --- |
 | [Libft](./libft/) | 125% (also bonus part) ✅ |
 | [ft_printf](./ft_printf/) | 100% ✅	 |
+| [born2beroot](./born2beroot) | 100% ✅	 |
 | [get_next_line](./getnextline/) | Currently doing ⌛ |
 
 Piscine Projects:
