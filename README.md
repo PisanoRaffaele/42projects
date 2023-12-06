@@ -8,6 +8,7 @@ Cursus Porjects:
 | [ft_printf](./ft_printf/) | 100% ✅	 |
 | [born2beroot](./born2beroot) | 100% ✅	 |
 | [get_next_line](./getnextline/) | Currently doing ⌛ |
+| [ExamRank02]() | 100% ✅ |
 
 Piscine Projects:
 
