@@ -30,7 +30,7 @@ Piscine Projects:
 
 Description: 
 
-The 42 School is a FREE programming school that defies traditional education, by enforcing the peer-to-peer methodology, where you learn from and with your peers. There are no assigned teachers in this school. If you're not sure about something, Google, the person next to you or on the bottom of the room are your best options. Just make sure you learn how to learn!
+The 42 School is a programming school that defies traditional education, by enforcing the peer-to-peer methodology, where you learn from and with your peers. There are no assigned teachers in this school. If you're not sure about something, Google, the person next to you or on the bottom of the room are your best options. Just make sure you learn how to learn!
 
 ![image](https://github.com/PisanoRaffaele/42projects/assets/116729126/e08b83d9-f321-40aa-9ea3-07a0397e19e4)
 
