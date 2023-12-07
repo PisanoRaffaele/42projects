@@ -3,112 +3,76 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpisano <rpisano@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:29:18 by rpisano           #+#    #+#             */
-/*   Updated: 2023/04/03 09:29:20 by rpisano          ###   ########.fr       */
+/*   Updated: 2023/12/07 12:51:51 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_new_line(char *s)
+static char	*ft_read(int fd, char *buf, char *backup)
 {
-	int		i;
-	int		j;
-	char	*nline;
+	int		read_ret;
+	char	*temp;
 
-	i = 0;
-	while (s[i] && s[i] != '\n')
-		i++;
-	if (!s[i])
+	read_ret = 1;
+	while (read_ret != 0)
 	{
-		free(s);
-		return (NULL);
+		read_ret = read(fd, buf, BUFFER_SIZE);
+		if (read_ret == -1)
+			return (0);
+		else if (read_ret == 0)
+			break ;
+		buf[read_ret] = '\0';
+		if (!backup)
+			backup = ft_strdup("");
+		temp = backup;
+		backup = ft_strjoin(temp, buf);
+		free(temp);
+		if (ft_strchr (buf, '\n'))
+			break ;
 	}
-	nline = (char *)malloc(sizeof(char) * (ft_strlen(s) - i + 1));
-	if (!nline)
-	{
-		free(s);
-		return (NULL);
-	}
-	i++;
-	j = 0;
-	while (s[i] != '\0')
-		nline[j++] = s[i++];
-	nline[j] = '\0';
-	free(s);
-	return (nline);
+	return (backup);
 }
 
-char	*ft_print_line(char *s)
+static char	*extract(char *s)
 {
-	char	*res;
-	int		i;
+	size_t	i;
+	char	*backup;
 
 	i = 0;
-	while (!s[i] && s[i] != '\n')
+	while (s[i] != '\n' && s[i] != '\0')
 		i++;
-	res = (char *)malloc(sizeof(char) * (i + 2));
-	if (!res)
+	if (s[i] == '\0' || s[1] == '\0')
+		return (0);
+	backup = ft_substr(s, i + 1, ft_strlen(s) - i);
+	if (*backup == '\0')
 	{
-		free(s);
-		return (NULL);
+		free(backup);
+		backup = NULL;
 	}
-	i = 0;
-	while (!s[i] && s[i] != '\n')
-	{
-		res[i] = s[i];
-		i++;
-	}
-	if (s[i] == '\n')
-		res[i++] = '\n';
-	res[i] = '\0';
-	free(s);
-	return (res);
-}
-
-char	*ft_read_line(char *s, int fd)
-{
-	char	*buf;
-	int		n;
-
-	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buf)
-		return (NULL);
-	n = 1;
-	while (!ft_strchr(s, '\n') && n != 0)
-	{
-		n = read(fd, buf, BUFFER_SIZE);
-		if (n == -1)
-		{
-			free(buf);
-			free(s);
-			return (NULL);
-		}
-		buf[n] = '\0';
-		s = ft_strjoin(s, buf);
-	}
-	free(buf);
-	return (s);
+	s[i + 1] = '\0';
+	return (backup);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*str[256];
-	char		*result;
+	char		*ret;
+	char		*buf;
+	static char	*backup;
 
-	if (fd < 0 || BUFFER_SIZE < 1 || fd > 256)
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
+		return (0);
+	ret = ft_read(fd, buf, backup);
+	free(buf);
+	buf = NULL;
+	if (!ret)
 		return (NULL);
-	if (!str[fd])
-	{
-		str[fd] = (char *)malloc(sizeof(char) * 1);
-		str[fd][0] = '\0';
-	}
-	str[fd] = ft_read_line(str[fd], fd);
-	if (!str[fd])
-		return (NULL);
-	result = ft_print_line(str[fd]);
-	str[fd] = ft_new_line(str[fd]);
-	return (result);
+	backup = extract(ret);
+	return (ret);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpisano <rpisano@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:28:40 by rpisano           #+#    #+#             */
-/*   Updated: 2023/04/03 09:28:42 by rpisano          ###   ########.fr       */
+/*   Updated: 2023/12/06 20:38:02 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@
 #  define BUFFER_SIZE 8
 # endif
 
-char	*get_next_line(int fd);
-char	*ft_read_line(char *s, int fd);
-char	*ft_print_line(char *s);
-char	*ft_new_line(char *s);
+int		ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strchr(const char *s, int i);
+char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
+char	*get_next_line(int fd);
 
 #endif
