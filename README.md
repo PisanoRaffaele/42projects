@@ -7,7 +7,7 @@ Cursus Porjects:
 | [Libft](./libft/) | 125% (also bonus part) ✅ |
 | [ft_printf](./ft_printf/) | 100% ✅	 |
 | [born2beroot](./born2beRoot) | 100% ✅	 |
-| [get_next_line](./getnextline/) | 112% ✅ (partial bonus part)|
+| [get_next_line](./getnextline/) | 100% ✅ |
 | [push_swap](./push_swap/) | Currently doing ⌛ |
 | | |
 | Exams | Grade |	
