@@ -11,7 +11,7 @@ Cursus Porjects:
 | [push_swap](./push_swap/) | Currently doing ⌛ |
 | | |
 | Exams | Grade |	
-| [ExamRank02]() | 100% ✅ |
+| ExamRank02 | 100% ✅ |
 
 Piscine Projects:
 
