@@ -9,7 +9,8 @@ Cursus Porjects:
 | [born2beroot](./born2beRoot) | 100% ✅	 |
 | [get_next_line](./getnextline/) | 112% ✅ (partial bonus part)|
 | [push_swap](./push_swap/) | Currently doing ⌛ |
-
+| | |
+| Exams | Grade |	
 | [ExamRank02]() | 100% ✅ |
 
 Piscine Projects:
