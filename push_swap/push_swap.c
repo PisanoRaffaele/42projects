@@ -6,44 +6,55 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:54:11 by rpisano           #+#    #+#             */
-/*   Updated: 2023/12/08 15:00:30 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/01/30 18:22:18 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		is_valid_input(int argc, char **argv)
+t_stack	*main2(char **argv)
 {
+	t_stack *a;
+	char	**tmp;
 	int		i;
 	int		j;
-	char	*str;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	a = NULL;
+	tmp = ft_split(argv[1], 32);
+	while (tmp[i])
 	{
-		str = argv[i];
-		j = 0;
-		while (str[j])
-		{
-			if (!ft_isdigit(str[j]) && str[j] != '-')
-				return (0);
-			if(str[j] == '-' && j != 0)
-				return (0);
-			if(j > 0 && str[j - 1] == '-' && !ft_isdigit(str[j]))
-				return (0);
-			j++;
-		}
+		j = ft_atoi2(tmp[i]);
+		add_back(&a, new_stack_node(j));
 		i++;
 	}
-	return (1);
+	ft_freestr(tmp);
+	free(tmp);
+	return (a);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	if (argc < 2)
-		return (0);
-	if (!is_valid_input(argc, argv))
-		return (0);
-	
+	t_stack	*a;
+	int		i;
+	int		j;
+
+	if (argc < 2 || !check_input(argv))
+		return (-1);
+	if (argc == 2)
+		main2(argv);
+	else
+	{
+		i = 1;
+		a = NULL;
+		while (i < argc)
+		{
+			j = ft_atoi2(argv[i++]);
+			add_back(&a, new_stack_node(j));
+		}
+	}
+	if (a && !check_dup(a) && !check_sorted(a))
+		ft_sort(&a);
+	free_stack(&a);
 	return (0);
 }
