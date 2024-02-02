@@ -19,8 +19,8 @@ SRC_2 =	applier.c \
 		stack_utils2.c \
 		utils.c \
 
-BONUS_SRC = bouns/checker.c \
-			bouns/checker_utils.c \
+BONUS_SRC = bouns/bonus.c \
+			bouns/bonus_utils.c \
 
 
 OBJ_1 = ${SRC_1:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:54:48 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/02 00:58:55 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/02 22:57:56 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include "../libft/libft.h"
+# include "libft/libft.h"
 
 typedef struct s_stack
 {
@@ -57,12 +57,14 @@ void	add_back(t_stack **stack, t_stack *stack_new);
 int		ft_atoi2(const char *str);
 void	ft_freestr(char **lst);
 void	ft_error(void);
+void	ft_error_ch(void);
 
 /****************** CHECKS ******************/
 
 int		check_input(char **argv);
 int		check_sorted(t_stack *stack_a);
 int		check_dup(t_stack *a);
+void	ft_checker_sub(t_stack **a, t_stack **b, char *line);
 
 /****************** Solvers ******************/
 

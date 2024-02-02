@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpisano <rpisano@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:30:49 by rpisano           #+#    #+#             */
-/*   Updated: 2023/03/30 00:08:40 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/02 22:49:40 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_putnbr_base(long int n, char *base);
+char	*get_next_line(int fd);
 
 #endif
