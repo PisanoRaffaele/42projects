@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solver1.c                                          :+:      :+:    :+:   */
+/*   counter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 20:52:04 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 21:43:16 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/02 01:13:37 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	ft_count_rarb(t_stack *a, t_stack *b, int num, char c)
 	if (c == 'a')
 	{
 		i = pos_a(a, num);
-		if (i < ft_find_index(b, num))
-			i = ft_find_index(b, num);
+		if (i < find_num_index(b, num))
+			i = find_num_index(b, num);
 	}
 	else
 	{
 		i = pos_b(b, num);
-		if (i < ft_find_index(a, num))
-			i = ft_find_index(a, num);
+		if (i < find_num_index(a, num))
+			i = find_num_index(a, num);
 	}
 	return (i);
 }
@@ -44,15 +44,15 @@ int	ft_count_rrarrb(t_stack *a, t_stack *b, int num, char c)
 	{
 		if (pos_b(b, num))
 			i = get_size(b) - pos_b(b, num);
-		if ((i < (get_size(a) - ft_find_index(a, num))) && ft_find_index(a, num))
-			i = get_size(a) - ft_find_index(a, num);
+		if ((i < (get_size(a) - find_num_index(a, num))) && find_num_index(a, num))
+			i = get_size(a) - find_num_index(a, num);
 	}
 	else
 	{
 		if (pos_a(a, num))
 			i = get_size(a) - pos_a(a, num);
-		if ((i < (get_size(b) - ft_find_index(b, num))) && ft_find_index(b, num))
-			i = get_size(b) - ft_find_index(b, num);
+		if ((i < (get_size(b) - find_num_index(b, num))) && find_num_index(b, num))
+			i = get_size(b) - find_num_index(b, num);
 	}
 	return (i);
 }
@@ -67,15 +67,15 @@ int	ft_count_rrarb(t_stack *a, t_stack *b, int num, char c)
 	i = 0;
 	if (c == 'b')
 	{
-		if (ft_find_index(a, num))
-			i = get_size(a) - ft_find_index(a, num);
+		if (find_num_index(a, num))
+			i = get_size(a) - find_num_index(a, num);
 		i = pos_b(b, num) + i;
 	}
 	else
 	{
-		if (ft_find_index(b, num))
-			i = get_size(b) - ft_find_index(b, num);
-		i = pos_a(a, num) + i;
+		if (pos_a(a, num))
+			i = get_size(a) - pos_a(a, num);
+		i = find_num_index(b, num) + i;
 	}
 	return (i);
 }
@@ -92,13 +92,13 @@ int	ft_count_rarrb(t_stack *a, t_stack *b, int num, char c)
 	{
 		if (pos_b(b, num))
 			i = get_size(b) - pos_b(b, num);
-		i = ft_find_index(a, num) + i;
+		i = find_num_index(a, num) + i;
 	}
 	else
 	{
-		if (pos_a(a, num))
-			i = get_size(a) - pos_a(a, num);
-		i = ft_find_index(b, num) + i;
+		if (find_num_index(b, num))
+			i = get_size(b) - find_num_index(b, num);
+		i = pos_a(a, num) + i;
 	}
 	return (i);
 }
@@ -112,13 +112,13 @@ int	ft_choose_rotation(t_stack *a, t_stack *b, char c)
 
 	if (c == 'a')
 	{
-		tmp = a;
-		i = ft_case_rrarrb(a, b, a->num, c);
+		tmp = b;
+		i = ft_count_rrarrb(a, b, b->num, c);
 	}
 	else
 	{
-		tmp = b;
-		i = ft_case_rrarrb(a, b, b->num, c);
+		tmp = a;
+		i = ft_count_rrarrb(a, b, a->num, c);
 	}
 	while (tmp)
 	{

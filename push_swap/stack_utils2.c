@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:00:14 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 19:53:11 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/01 01:00:16 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	find_num_index(t_stack *a, int num)
 		i++;
 		a = a->next;
 	}
-	a->i = 0;
+	if (a)
+		a->i = 0;
 	return (i);
 }

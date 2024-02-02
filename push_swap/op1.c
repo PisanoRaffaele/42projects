@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:51:09 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 22:10:07 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/01 00:26:20 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ void	ft_rotate(t_stack **s, int j, char c)
 	{
 		if (c == 'a')
 			write(1, "ra\n", 3);
-		else
+		else if (c == 'b')
 			write(1, "rb\n", 3);
+		else
+			write(1, "er\n", 3);
 	}
 }
 
@@ -50,8 +52,10 @@ void	ft_swap(t_stack **s, int j, char c)
 	{
 		if (c == 'a')
 			write(1, "sa\n", 3);
-		else
+		else if (c == 'b')
 			write(1, "sb\n", 3);
+		else
+			write(1, "er\n", 3);
 	}
 }
 
@@ -71,8 +75,10 @@ void	ft_push(t_stack **dest, t_stack **from, int j, char c)
 	{
 		if (c == 'a')
 			write(1, "pa\n", 3);
-		else
+		else if (c == 'b')
 			write(1, "pb\n", 3);
+		else
+			write(1, "er\n", 3);
 	}
 }
 
@@ -103,8 +109,10 @@ void	ft_rev_rot(t_stack **s, int j, char c)
 	{
 		if (c == 'a')
 			write(1, "rra\n", 4);
-		else
+		else if (c == 'b')
 			write(1, "rrb\n", 4);
+		else
+			write(1, "er\n", 3);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:30:19 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 20:59:12 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/01 00:04:15 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*new_stack_node(long num)
 
 	new = malloc(sizeof (t_stack));
 	if (!new)
-		return(-1);
+		ft_error();
 	new->num = num;
 	new->next = NULL;
 	return (new);

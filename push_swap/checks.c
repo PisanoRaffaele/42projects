@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:45:12 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 18:23:08 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/01/31 23:54:34 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,18 @@ int	check_nums(char **argv, int i, int j)
 		j = 0;
 		while ((argv[i][j] != '\0'))
 		{
-			char c = argv[i][j];
-			if (c == '+' || c == '-')
+			if (argv[i][j] == '+' || argv[i][j] == '-')
 			{
 				j++;
-				if (!ft_isdigit(c))
+				if (!ft_isdigit(argv[i][j]))
 					return (false);
 			}
-			else if (ft_isdigit(c))
+			else if (ft_isdigit(argv[i][j]))
 			{
 				j++;
-				if (c == '\0')
+				if (argv[i][j] == '\0')
 					break ;
-				if (!ft_isdigit(c) && c != ' ')
+				if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ')
 					return (false);
 			}
 			j++;
@@ -63,7 +62,7 @@ int	check_input(char **argv)
 		while ((argv[i][j]) != '\0')
 		{
 			if (ft_isalpha2(argv[i][j]))
-				return (-1);
+				ft_error();
 			j++;
 		}
 		i++;

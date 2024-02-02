@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:10:47 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 22:27:24 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/02 01:28:31 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_sort_three(t_stack **stack_a)
 	{
 		ft_rotate(stack_a, 0, 'a');
 		if (!check_sorted(*stack_a))
-			ft_sa(stack_a, 0);
+			ft_swap(stack_a, 0, 'a');
 	}
 	else
 	{
@@ -52,10 +52,10 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 		{
 			if (i == ft_count_rarb(*stack_a, *stack_b, tmp->num, 'b'))
 				i = ft_apply_rarb(stack_a, stack_b, tmp->num, 'a');
-			else if (i == ft_count_rarrb(*stack_a, *stack_b, tmp->num, 'b'))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->num, 'a');
 			else if (i == ft_count_rrarrb(*stack_a, *stack_b, tmp->num, 'b'))
 				i = ft_apply_rrarrb(stack_a, stack_b, tmp->num, 'a');
+			else if (i == ft_count_rarrb(*stack_a, *stack_b, tmp->num, 'b'))
+				i = ft_apply_rarrb(stack_a, stack_b, tmp->num, 'a');
 			else if (i == ft_count_rrarb(*stack_a, *stack_b, tmp->num, 'b'))
 				i = ft_apply_rrarb(stack_a, stack_b, tmp->num, 'a');
 			else

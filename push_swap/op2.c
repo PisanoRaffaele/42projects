@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:51:43 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 20:17:10 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/01/30 22:35:46 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	ft_rr(t_stack **a, t_stack **b, int j)
 	if (!*a || !((*a)->next) || !*b || !((*b)->next))
 		return ;
 	tmp = *a;
-	*a = ft_lstlast(*a);
+	*a = get_last_node(*a);
 	(*a)->next = tmp;
 	*a = tmp->next;
 	tmp->next = NULL;
 	tmp = *b;
-	*b = ft_lstlast(*b);
+	*b = get_last_node(*b);
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:54:48 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 22:25:21 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/02 00:58:55 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,32 +52,32 @@ int		pos_b(t_stack *stack_b, int num_to_push);
 int		pos_a(t_stack *stack_a, int num_to_push);
 void	add_back(t_stack **stack, t_stack *stack_new);
 
-
 /****************** other UTILS ******************/
 
-int	ft_atoi2(const char *str);
-
+int		ft_atoi2(const char *str);
+void	ft_freestr(char **lst);
+void	ft_error(void);
 
 /****************** CHECKS ******************/
 
-int	check_input(char **argv);
-int	check_sorted(t_stack *stack_a);
-int	check_dup(t_stack *a);
+int		check_input(char **argv);
+int		check_sorted(t_stack *stack_a);
+int		check_dup(t_stack *a);
 
 /****************** Solvers ******************/
 
-int	ft_count_rarb(t_stack *a, t_stack *b, int num, char c);
-int	ft_count_rrarrb(t_stack *a, t_stack *b, int num, char c);
-int	ft_count_rrarb(t_stack *a, t_stack *b, int num, char c);
-int	ft_count_rarrb(t_stack *a, t_stack *b, int num, char c);
-int	ft_choose_rotation(t_stack *a, t_stack *b, char c);
+int		ft_count_rarb(t_stack *a, t_stack *b, int num, char c);
+int		ft_count_rrarrb(t_stack *a, t_stack *b, int num, char c);
+int		ft_count_rrarb(t_stack *a, t_stack *b, int num, char c);
+int		ft_count_rarrb(t_stack *a, t_stack *b, int num, char c);
+int		ft_choose_rotation(t_stack *a, t_stack *b, char c);
 
 /****************** Appliers ******************/
 
-int	ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
 
 #endif
 
