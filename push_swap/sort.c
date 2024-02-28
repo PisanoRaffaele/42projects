@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:10:47 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/02 01:28:31 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 14:03:47 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_sort_three(t_stack **stack_a)
 	}
 	else
 	{
-		if (find_num_index(*stack_a, get_max_num(*stack_a)) == 1)
+		if (num_index(*stack_a, get_max_num(*stack_a)) == 1)
 			ft_rev_rot(stack_a, 0, 'a');
 		else
 			ft_swap(stack_a, 0, 'a');
@@ -37,7 +37,8 @@ void	ft_sort_three(t_stack **stack_a)
 
 // This function sorts the stack_a.
 // All values are pushed to stack_b, sorted and pushed back to stack_a.
-// At the end it brings the smallest number of the stack_a to the top to have stack_a sorted too.
+// At the end it brings the smallest number of the stack_a to the
+// top to have stack_a sorted too.
 // This function sort and push stacks until 3 members left behind.
 void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {
@@ -64,9 +65,11 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-// This function pushes all the elements in stack_a to stack_b, until only 3 elements are left.
+// This function pushes all the elements in stack_a to stack_b, until
+// only 3 elements are left.
 // While pushing, it makes sure if the stack_b is sorted.
-// When three elements are left, it calls ft_sort_three to sort left over elements in stack_a.
+// When three elements are left, it calls ft_sort_three to sort left
+// over elements in stack_a.
 t_stack	*ft_sort_b(t_stack **stack_a)
 {
 	t_stack	*stack_b;
@@ -83,7 +86,8 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	return (stack_b);
 }
 
-// This function pushes back the elements from stack_b to stack_a until stack_b is empty.
+// This function pushes back the elements from stack_b to
+// stack_a until stack_b is empty.
 t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
@@ -122,7 +126,7 @@ void	ft_sort(t_stack **stack_a)
 	{
 		stack_b = ft_sort_b(stack_a);
 		stack_a = ft_sort_a(stack_a, &stack_b);
-		i = find_num_index(*stack_a, get_min_num(*stack_a));
+		i = num_index(*stack_a, get_min_num(*stack_a));
 		if (i < get_size(*stack_a) - i)
 		{
 			while ((*stack_a)->num != get_min_num(*stack_a))

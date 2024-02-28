@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:54:48 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/02 22:57:56 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 13:51:35 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_stack	*get_last_node(t_stack *stack_node);
 int		get_size(t_stack *stack_node);
 int		get_min_num(t_stack *stack_node);
 int		get_max_num(t_stack *stack_node);
-int		find_num_index(t_stack *a, int num);
+int		num_index(t_stack *a, int num);
 int		pos_b(t_stack *stack_b, int num_to_push);
 int		pos_a(t_stack *stack_a, int num_to_push);
 void	add_back(t_stack **stack, t_stack *stack_new);
@@ -82,4 +82,3 @@ int		ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
 int		ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
 
 #endif
-

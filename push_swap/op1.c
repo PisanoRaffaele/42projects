@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:51:09 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/01 00:26:20 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 13:59:03 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	ft_swap(t_stack **s, int j, char c)
 	}
 }
 
-// push: take the first element at the top of from and put it at the top of dest.
+// push: take the first element at the top of
+// 'from' and put it at the top of 'dest'.
 // c is the name of dest stack.
 void	ft_push(t_stack **dest, t_stack **from, int j, char c)
 {
@@ -77,6 +78,19 @@ void	ft_push(t_stack **dest, t_stack **from, int j, char c)
 			write(1, "pa\n", 3);
 		else if (c == 'b')
 			write(1, "pb\n", 3);
+		else
+			write(1, "er\n", 3);
+	}
+}
+
+void	ft_rev_rot_2(int j, char c)
+{
+	if (j == 0)
+	{
+		if (c == 'a')
+			write(1, "rra\n", 4);
+		else if (c == 'b')
+			write(1, "rrb\n", 4);
 		else
 			write(1, "er\n", 3);
 	}
@@ -105,15 +119,5 @@ void	ft_rev_rot(t_stack **s, int j, char c)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
-	{
-		if (c == 'a')
-			write(1, "rra\n", 4);
-		else if (c == 'b')
-			write(1, "rrb\n", 4);
-		else
-			write(1, "er\n", 3);
-	}
+	ft_rev_rot_2(j, c);
 }
-
-

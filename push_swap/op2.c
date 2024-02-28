@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:51:43 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/30 22:35:46 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 14:02:11 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,29 @@ void	ft_rr(t_stack **a, t_stack **b, int j)
 		write(1, "rr\n", 3);
 }
 
+void	ft_rrr_2(t_stack **a, t_stack **b, int j)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = *b;
+	while ((*b)->next)
+	{
+		i++;
+		*b = (*b)->next;
+	}
+	(*b)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rrr\n", 4);
+}
+
 // rrr : rra and rrb at the same time.
 void	ft_rrr(t_stack **a, t_stack **b, int j)
 {
@@ -55,22 +78,7 @@ void	ft_rrr(t_stack **a, t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	i = 0;
-	tmp = *b;
-	while ((*b)->next)
-	{
-		i++;
-		*b = (*b)->next;
-	}
-	(*b)->next = tmp;
-	while (i > 1)
-	{
-		tmp = tmp->next;
-		i--;
-	}
-	tmp->next = NULL;
-	if (j == 0)
-		write(1, "rrr\n", 4);
+	ft_rrr_2(a, b, j);
 }
 
 // ss: sa and sb at the same time.

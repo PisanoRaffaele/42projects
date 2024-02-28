@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:45:12 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/31 23:54:34 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 13:48:41 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	check_nums(char **argv, int i, int j)
 
 int	check_input(char **argv)
 {
-
 	int		i;
 	int		j;
 

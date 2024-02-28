@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:54:11 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/02 00:58:38 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 14:02:35 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*main2(int argc, char **argv)
 {
-	t_stack *a;
+	t_stack	*a;
 	char	**tmp;
 	int		i;
 	int		j;

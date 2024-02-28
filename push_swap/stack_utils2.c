@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:00:14 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/01 01:00:16 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 13:50:18 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	get_max_num(t_stack *stack_node)
 }
 
 // This function checks the position of a number in the stack.
-int	find_num_index(t_stack *a, int num)
+int	num_index(t_stack *a, int num)
 {
 	int		i;
 
