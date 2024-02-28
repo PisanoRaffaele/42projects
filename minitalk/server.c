@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:09:24 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/28 16:39:08 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 22:22:33 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,6 @@ static void	ft_stop(void)
 	return ;
 }
 
-// static void ft_bin(int c)
-// {
-// 	int i = 32;
-// 	while (i--)
-// 	{
-// 		if ((c >> i) & 1)
-// 			write(1, "1", 1);
-// 		else
-// 			write(1, "0", 1);
-// 	}
-// 	write(1, "\n", 1);
-// }
 static void	server(int signal, siginfo_t *info, void *context)
 {
 	static unsigned char	c = 0;

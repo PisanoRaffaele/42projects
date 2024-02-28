@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 23:04:47 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/28 16:32:49 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 22:22:16 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	main(int argc, char **argv)
 	}
 	signal(SIGUSR1, is_received);
 	signal(SIGUSR2, is_received);
-	pid = ft_atoi(argv[2]);
-	send_str(pid, argv[1]);
+	pid = ft_atoi(argv[1]);
+	send_str(pid, argv[2]);
 	pause();
 	return (0);
 }
