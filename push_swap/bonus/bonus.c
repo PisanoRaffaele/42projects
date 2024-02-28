@@ -6,11 +6,35 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 01:45:44 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/02 22:56:04 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 15:53:12 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include "../getnextline/get_next_line.h"
+
+t_stack	*main4(int argc, char **argv)
+{
+	t_stack	*a;
+	char	**tmp;
+	int		i;
+	int		j;
+
+	i = 0;
+	a = NULL;
+	if (argc < 2 || !check_input(argv))
+		ft_error();
+	tmp = ft_split(argv[1], 32);
+	while (tmp[i])
+	{
+		j = ft_atoi2(tmp[i]);
+		add_back(&a, new_stack_node(j));
+		i++;
+	}
+	ft_freestr(tmp);
+	free(tmp);
+	return (a);
+}
 
 t_stack	*main3(int argc, char **argv)
 {
@@ -20,7 +44,7 @@ t_stack	*main3(int argc, char **argv)
 
 	i = 1;
 	if (argc <= 2)
-		a = main2(argc, argv);
+		a = main4(argc, argv);
 	else
 	{
 		while (i < argc)

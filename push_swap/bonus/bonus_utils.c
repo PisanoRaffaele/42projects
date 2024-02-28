@@ -6,15 +6,16 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 22:47:30 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/02 22:53:41 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 15:57:47 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include "../getnextline/get_next_line.h"
 
 void	ft_error_ch(void)
 {
-	write(1, "Error\n", 6);
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
 
@@ -69,7 +70,7 @@ void	ft_checker_sub(t_stack **a, t_stack **b, char *line)
 	}
 	if (*b)
 		write(1, "KO\n", 3);
-	else if (!ft_checksorted(*a))
+	else if (!check_sorted(*a))
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);

@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:54:11 by rpisano           #+#    #+#             */
-/*   Updated: 2024/02/28 14:02:35 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 15:49:27 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*main2(int argc, char **argv)
 	int		j;
 
 	i = 0;
+	a = NULL;
 	if (argc < 2 || !check_input(argv))
 		ft_error();
 	tmp = ft_split(argv[1], 32);
@@ -34,19 +35,6 @@ t_stack	*main2(int argc, char **argv)
 	return (a);
 }
 
-// void	print_stack(t_stack *a)
-// {
-// 	t_stack *tmp;
-
-// 	tmp = a;
-// 	while (tmp)
-// 	{
-// 		printf("%d -> ", tmp->num);
-// 		tmp = tmp->next;
-// 	}
-// 	printf("\n");
-// }
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -54,6 +42,7 @@ int	main(int argc, char **argv)
 	int		j;
 
 	i = 1;
+	a = NULL;
 	if (argc <= 2)
 		a = main2(argc, argv);
 	else
@@ -64,7 +53,7 @@ int	main(int argc, char **argv)
 			add_back(&a, new_stack_node(j));
 		}
 	}
-	if (!a || check_dup(a))
+	if (!a || check_dup(a) || !check_input(argv))
 	{
 		free_stack(&a);
 		ft_error();

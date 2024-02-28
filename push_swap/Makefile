@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = gcc
+CC = gcc -g
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror
 LIBFTDIR = libft/
@@ -19,14 +19,17 @@ SRC_2 =	applier.c \
 		stack_utils2.c \
 		utils.c \
 
-BONUS_SRC = bouns/bonus.c \
-			bouns/bonus_utils.c \
+BONUS_SRC = bonus/bonus.c \
+			bonus/bonus_utils.c \
 
+GETNEXTLINE = getnextline/get_next_line.c \
+			  getnextline/get_next_line_utils.c
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
 
-BONUS_OBJ =${BONUS_SRC:.c=.o}
+BONUS_OBJ = ${BONUS_SRC:.c=.o}
+GETNEXTLINE_OBJ = ${GETNEXTLINE:.c=.o}
 
 INCLUDE = -L ./libft -lft
 
@@ -37,9 +40,8 @@ ${NAME}: ${OBJ_1} ${OBJ_2}
 	make -C $(LIBFTDIR)
 	${CC} ${FLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
 
-${BONUS}: ${OBJ_2} ${BONUS_OBJ}
-	make -C $(LIBFTDIR)
-	${CC} ${FLAGS} ${BONUS_OBJ} ${OBJ_2} -o ${BONUS} ${INCLUDE}
+${BONUS}: ${OBJ_2} ${BONUS_OBJ} ${GETNEXTLINE_OBJ}
+	${CC} ${FLAGS} ${BONUS_OBJ} ${OBJ_2} ${GETNEXTLINE_OBJ} -o bonus/${BONUS} ${INCLUDE}
 
 all: ${NAME} ${BONUS}
 

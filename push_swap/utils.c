@@ -6,7 +6,7 @@
 /*   By: rpisano <rpisano@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:56:46 by rpisano           #+#    #+#             */
-/*   Updated: 2024/01/31 23:57:39 by rpisano          ###   ########.fr       */
+/*   Updated: 2024/02/28 15:09:49 by rpisano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void	ft_freestr(char **lst)
 
 void	ft_error(void)
 {
-	write (2, "Error\n", 6);
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(1);
 }

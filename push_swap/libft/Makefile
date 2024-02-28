@@ -46,7 +46,7 @@ SRCS_B = ft_lstnew.c \
 		 ft_lstiter.c \
 		 ft_lstmap.c \
 
-CC	= gcc
+CC	= gcc -g
 OBJS	= $(SRCS:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
 RM		= rm -f
